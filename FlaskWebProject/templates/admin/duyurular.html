@@ -1,0 +1,91 @@
+{% extends "admin/baseAdmin.html" %} {% block admin %}
+
+<div class="duyuru-ekle">
+  <div class="container bg-light shadow p-5">
+    <h1>Duyuru ekle</h1>
+    <form action="" method="post">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Duyuru Başlığı</label
+        >
+        {{form.title(type='text',
+        class='form-control',id='exampleFormControlInput1')}}
+        <!-- <input type="email" class="form-control" id="exampleFormControlInput1" /> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label"
+          >Duyuru Altbaşlığı</label
+        >
+        {{form.subtitle(type='text',
+        class='form-control',id='exampleFormControlInput2')}}
+        <!-- <input type="email" class="form-control" id="exampleFormControlInput2" /> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Duyuru Metni</label
+        >
+        {{form.text(class='form-control',id='exampleFormControlTextarea1',rows=5)}}
+        <!-- <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+      ></textarea> -->
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          {{form.announcementActivityDate(type='date',class='form-control
+          text-center')}}
+          <!-- <input
+          type="date"
+          name=""
+          id="datecontrol"
+          class="form-control text-center"
+        /> -->
+        </div>
+        <div class="col-sm-9 text-end">
+          {{form.addButton(class='btn btn-success', type='submit')}}
+          <!-- <button type="submit" class="btn btn-success">Ekle</button> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="aktiviteler">
+  <div class="container bg-light shadow p-5 mt-5">
+    <h1>Eklenmiş duyurular</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Başlık</th>
+          <th scope="col">Altbaşlık</th>
+          <th scope="col">Duyuru Metni</th>
+          <th scope="col">Duyuru Tarihi</th>
+          <th scope="col">Eklenme Tarihi</th>
+          <th scope="col" class="text-center">Aksiyonlar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for duyuru in duyurular%}
+        <tr>
+          <td>{{duyuru.title}}</td>
+          <td>{{duyuru.subtitle}}</td>
+          <td><p class="text-break">{{duyuru.text}}</p></td>
+          <td>{{duyuru.announcementDate.strftime('%d.%m.%Y')}}</td>
+          <td>{{duyuru.announcementAddDate.strftime('%d.%m.%Y')}}</td>
+          <td class="text-center">
+            <div>
+              <a
+                class="btn btn-danger mb-2"
+                href="{{url_for('duyuruSil',duyuru_id=duyuru.id)}}"
+                >Sil</a
+              >
+            </div>
+            
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

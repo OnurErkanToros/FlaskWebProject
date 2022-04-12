@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%if title%}
+    <title>{{title}}</title>
+    {%else%}
+    <title>Atmaca&Karaarslan</title>
+    {%endif%}
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static',filename='img/favicon.ico')}}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <header class="bg-light">
+      <div class="bacali-ev">
+        {%if calismaSaati%}
+        <img
+          src="{{url_for('static',filename='img/anasayfa/ev/calisiyoruz.gif')}}"
+          alt=""
+          class="bacali-ev-img"
+        />
+        {%else%}
+        <h5>Kapalıyız</h5>
+        <img
+          src="{{url_for('static',filename='img/anasayfa/ev/kapaliyiz.gif')}}"
+          alt=""
+          class="bacali-ev-img"
+        />
+
+        {%endif%}
+      </div>
+
+      <div class="iletisim-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 text-center d-flex justify-content-center">
+              <div class="iletisim-box telefon">
+                <a href="#" class="fa fa-phone"></a>
+                0 530 115 35 11
+              </div>
+            </div>
+            <div class="col-md-4 text-center d-flex justify-content-center">
+              <div class="iletisim-box fax">
+                <a href="#" class="fa fa-fax"></a>
+                0 312 447 87 88
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+              <div class="iletisim-box mail text-center">
+                <a href="#" class="fa fa-envelope"></a>
+                bilgi@atmacakaraarslan.com.tr
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav id="navbar" class="navbar navbar-expand-xl navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{url_for('index')}}"
+            ><img
+              class="img-fluid img-fluidd"
+              src="{{url_for('static',filename='img/brand.gif')}}"
+              alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse text-center"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ms-auto mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('index')}}">Anasayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('kurumsal')}}">Kurumsal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('biz')}}">Biz</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('hizmetler')}}"
+                  >Hizmetlerimiz</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('kariyer')}}">Kariyer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('mevzuat')}}">Mevzuat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('duyuru')}}">Duyurular</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('etkinlik')}}"
+                  >Etkinlikler</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('iletisim')}}">İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="base-div">
+      {%block content%}
+
+      <!-- Buraya sayfalar gelecek -->
+
+      {%endblock%}
+    </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light pt-3 mt-5 text-muted">
+      <!-- Section: Social media -->
+
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-center fw-bold mb-4">
+                Atmaca Karaarslan Yeminli Mali Müşavirlik A.Ş.
+              </h6>
+              <p>
+                Atmaca & Karaarslan olarak; sizi dinlemeye ve anlamaya,
+                taleplerinizi ön planda tutarak hareket tarzımızı belirlemeye,
+                her türlü vergi iadelerinizi takip etmeye, her konuda
+                haklarınızı korumaya, olası uyuşmazlıklarda sizi savunmaya ve
+                başarıya giden yolda sizinle adım adım yürümeye hazırız.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+
+              <p>
+                <a href="{{url_for('kurumsal')}}" class="text-reset"
+                  >Kurumsal</a
+                >
+              </p>
+              <p>
+                <a href="{{url_for('biz')}}" class="text-reset">Biz</a>
+              </p>
+              <p>
+                <a href="{{url_for('hizmetler')}}" class="text-reset"
+                  >Hizmetlerimiz</a
+                >
+              </p>
+              <p>
+                <a href="{{url_for('kariyer')}}" class="text-reset">Kariyer</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+
+              <p>
+                <a href="{{url_for('mevzuat')}}" class="text-reset">Mevzuat</a>
+              </p>
+              <p>
+                <a href="{{url_for('duyuru')}}" class="text-reset">Duyurular</a>
+              </p>
+              <p>
+                <a href="{{url_for('etkinlik')}}" class="text-reset"
+                  >Etkinlikler</a
+                >
+              </p>
+              <p>
+                <a href="{{url_for('iletisim')}}" class="text-reset"
+                  >İletişim</a
+                >
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">İLETİŞİM</h6>
+              <p>
+                <i class="fa fa-home me-3"></i> Büyükesat Mahallesi Mahatma
+                Gandi Caddesi No: 78/6 06680 Çankaya/ANKARA
+              </p>
+              <p>
+                <i class="fa fa-envelope me-3"></i>
+                bilgi@atmacakaraarslan.com.tr
+              </p>
+              <p><i class="fa fa-phone me-3"></i> 0 530 115 35 11</p>
+              <p><i class="fa fa-print me-3"></i> 0 312 447 87 88</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2022 Her Hakkı Saklıdır:
+        <a class="text-reset fw-bold" href="https://escapeakademi.com/"
+          >Escape Akademi</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

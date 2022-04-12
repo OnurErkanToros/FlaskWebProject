@@ -1,0 +1,689 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* header {
+  height: 100vh;
+  background-image: url(/img/Ankara\ Silüeti.png),
+    linear-gradient(to right bottom, white, #b8984f);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+} */
+/*Header start*/
+
+.navbar-brand {
+  transition: 200ms all;
+}
+.img-fluidd {
+  animation: navbar-brand-buyut 1s 1;
+  max-height: 180px;
+  min-height: 50px;
+  min-width: 50px;
+}
+.navbar {
+  transition: 500ms all;
+}
+
+.bacali-ev {
+  padding: 15px;
+  background-color: #ebeced;
+  overflow: hidden;
+  float: right;
+  text-align: center;
+}
+.bacali-ev > img {
+  height: 100px;
+}
+
+.scroll-nav-img {
+  animation: navbar-brand-kucult 1s 1;
+  height: 50px;
+}
+.nav-link {
+  font-size: large;
+  font-family: "Roboto", sans-serif;
+  color: rgba(0, 0, 0, 0.705);
+  margin-right: 16px;
+  position: relative;
+  letter-spacing: 1px;
+}
+.nav-link:hover {
+  color: black;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 2px;
+  left: 0;
+  background-color: black;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  top: 2px;
+  right: 0;
+  background-color: black;
+}
+.nav-link:active {
+  transform: scale(0.9);
+}
+.nav-link:hover::after {
+  animation: nav-item-animation 500ms 1;
+  width: 100%;
+}
+.nav-link:hover::before {
+  animation: nav-item-animation 500ms 1;
+  width: 100%;
+}
+.iletisim-bar {
+  padding-top: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.iletisim-bar .fa {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 400ms all;
+}
+.iletisim-bar .fa:hover {
+  transform: scale(1.09);
+  color: black;
+  background-color: #fff;
+}
+.iletisim-bar .fa-phone {
+  color: blueviolet;
+}
+.iletisim-bar .fa-fax {
+  color: yellowgreen;
+}
+.iletisim-bar .fa-envelope {
+  color: aqua;
+}
+.iletisim-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-ellipsis-v {
+  margin-right: 20px;
+}
+
+@keyframes nav-item-animation {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes navbar-brand-kucult {
+  from {
+    height: 180px;
+  }
+  to {
+    height: 50px;
+  }
+}
+@keyframes navbar-brand-buyut {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header .navbar-brand img {
+    max-height: 100px;
+  }
+}
+/*Header end*/
+
+/*Anasayfa start*/
+.duyuru-card {
+  margin: 20px;
+  margin-right: 0px;
+  padding: 20px;
+  overflow: hidden;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.duyuru-card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.card:before,
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: #000;
+  transition: 0.5s;
+  z-index: -1;
+}
+.card:hover:before {
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+.card:hover:after {
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+.card .imgBx {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.card:hover .imgBx {
+  bottom: 80px;
+}
+
+.card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .details {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: 60px;
+  text-align: center;
+}
+
+.card .details h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.card .details h2 span {
+  font-weight: 500;
+  font-size: 16px;
+  color: #f38695;
+  display: block;
+  margin-top: 5px;
+}
+
+.kurumsal-kutu {
+  width: 150px;
+
+  overflow: hidden;
+  object-fit: cover;
+  transition: 500ms all;
+}
+.kurumsal-kutu img {
+  width: 100%;
+}
+.kurumsal-kutu:hover {
+  transform: rotate(3deg) scale(1.05);
+}
+/*Anasayfa end*/
+/*İletişim start*/
+.contact {
+  margin-top: 7rem;
+}
+
+.ftco-section .form-control {
+  height: 44px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  border-radius: 2px;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none;
+}
+.ftco-section .form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+.ftco-section .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+.ftco-section .form-control:-ms-input-placeholder {
+  /* IE 0+ */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+.ftco-section .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+.ftco-section .form-control:focus,
+.ftco-section .form-control:active {
+  border-color: #2553b8 !important;
+}
+
+textarea.form-control {
+  height: inherit !important;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.contact-wrap {
+  background: #e8edf0;
+}
+
+.dbox {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .dbox {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+.dbox p {
+  margin-bottom: 0;
+}
+.dbox p span {
+  font-weight: 500;
+  color: #000;
+}
+.dbox p a {
+  color: #2553b8;
+}
+.dbox .icon {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.dbox .icon span {
+  font-size: 35px;
+  color: #fff;
+}
+.dbox .text {
+  width: 100%;
+}
+
+.ftco-section .btn {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  margin-bottom: 20px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+.ftco-section .btn:hover,
+.ftco-section .btn:active,
+.ftco-section .btn:focus {
+  outline: none !important;
+  -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+  -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+}
+.btn.btn-primary {
+  background: #2553b8 !important;
+  border-color: #2553b8 !important;
+  color: #fff;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  border-color: #1c408e !important;
+  background: #1c408e !important;
+}
+
+.contactForm .label {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contactForm .form-control {
+  border: none;
+}
+
+#map {
+  width: 100%;
+}
+@media (max-width: 767.98px) {
+  #map {
+    height: 300px;
+  }
+}
+
+#contactForm .error {
+  color: red;
+  font-size: 12px;
+}
+
+#contactForm .form-control {
+  font-size: 16px;
+}
+
+#message {
+  resize: vertical;
+}
+
+#form-message-warning,
+#form-message-success {
+  display: none;
+}
+
+#form-message-warning {
+  color: red;
+}
+
+#form-message-success {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.submitting {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2553b8;
+}
+.icon .fa {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-color: gray;
+}
+.icon .fa-youtube {
+  color: #fff;
+  background-color: red;
+}
+.icon .fa-twitter {
+  color: #fff;
+  background-color: #208bec;
+}
+.icon .fa-instagram {
+  color: #fff;
+  background-color: #d60082;
+}
+.icon .fa-youtube {
+  color: #fff;
+  background-color: red;
+}
+/*iletisim end*/
+/*Kariyer start*/
+
+.kariyer img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+/*Kariyer end*/
+
+/*Kurumsal start*/
+.baskan-mesaji p {
+  text-indent: 50px;
+}
+
+/*Kurumsal end*/
+
+/*Mevduat start*/
+.mevzuat-linkler {
+  text-align: center;
+}
+
+.mevzuat-linkler img {
+  height: 120px;
+}
+
+.mevzuat-linkler a {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+/*Mevduat end*/
+
+/*Hizmetler start*/
+.hizmetler {
+  margin-top: 30px;
+}
+.hizmetler .hizmet-main {
+  min-width: 250px;
+  max-width: 300px;
+  height: 400px;
+  border-radius: 5px;
+  background-image: url("/static/img/hizmetler/janti.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+.hizmetler .hizmet-main .before-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: darkcyan;
+  opacity: 0.3;
+  position: relative;
+  transition: 500ms all;
+}
+.hizmetler .hizmet-main .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  transition: 500ms all;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.overlay a {
+  text-decoration: none;
+  font-size: large;
+  padding: 20px 30px;
+  background-color: #fff;
+  color: black;
+  border: 2px solid #000;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px;
+  transition: 200ms all;
+}
+.hizmet-main:hover .before-overlay {
+  opacity: 0.9;
+}
+.hizmet-main:hover .overlay {
+  color: #fff;
+}
+.overlay > a:active {
+  box-shadow: none;
+  transform: translatey(2px);
+}
+
+/*Hizmetler end*/
+
+/*Hakkımızda start*/
+.isim-bas-harf {
+  float: left;
+  font-size: calc(1.625rem + 4.5vw);
+  line-height: 70%;
+}
+.isim-devam {
+  font-size: calc(1rem + 1.5vw);
+}
+/*Hakkımızda end*/
+
+.header-yukseklik {
+  max-height: 170px;
+}
+
+/* Admin login start */
+.login {
+  width: 500px;
+}
+.login img {
+  pointer-events: none;
+}
+/* etkinlikler */
+.ort-div {
+  height: 230px;
+  overflow: auto;
+}
+
+/* duyurular */
+.duyuru-sayfası-card-sag {
+  height: 200px;
+}
+
+/* hizmet detay */
+
+.hizmetcik {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 16px;
+  text-align: center;
+  transition: 300ms all;
+}
+.hizmetcik:hover {
+  background-color: darkcyan;
+  color: #fff;
+}
+
+.hizmetcik > p {
+  margin: 0;
+}
+
+/* Açılış sayfası */
+.ilkSayfa{
+  height: 100vh;
+  overflow: hidden;
+}
+.acilisSayfasi {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.sayfayiGizle {
+  display: none;
+}
+
+.janti-logo img {
+  width: 100%;
+  height: 90%;
+  position: relative;
+}
+.janti-logo {
+  position: relative;
+  object-fit: cover;
+}
+.janti-logo .logo {
+  position: absolute;
+  top: 28%;
+  right: 23%;
+  object-fit: cover;
+  overflow: hidden;
+  width: 11%;
+  height: 20%;
+  transition: 500ms all;
+}
+.janti-logo-animation {
+  animation-name: logoyu-dondur;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.progressBar {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+.progressBar .bar-color {
+  height: 19px;
+}
+.progress-doldur-animation {
+  animation-name: progress-doldur;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+.videoEkrani {
+  text-align: center;
+}
+.videoEkrani video {
+  width: 100%;
+}
+
+@keyframes logoyu-dondur {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes progress-doldur {
+  0% {
+    width: 0%;
+    background-color: #f7eabf;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+    background-color: #de9500;
+  }
+}

@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block content %}
+<header>
+  <div class="container text-center">
+    <img
+      class="img-fluid header-yukseklik"
+      src="{{url_for('static',filename='img/sayfaBasliklari/headerKariyer.png')}}"
+      alt=""
+    />
+  </div>
+</header>
+<section class="kariyer mt-5 mb-5">
+  <div class="container">
+    <div class="kariyer-bilgilendirme bg-light p-3 rounded rounded-3 shadow">
+      <div class="row">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <img
+            src="{{url_for('static',filename='img/kariyer/kariyer.png')}}"
+            alt=""
+          />
+        </div>
+        <div class="col-md-6 mt-3">
+          <p>
+            Atmaca & Karaarslan olarak, ekiplerde görev alacak gençlerimizin her
+            alanda iyi yetişmesine büyük önem veriyoruz. Mesleki eğitim
+            konusundaki tecrübemizin de ışığıyla, aramıza yeni katılan gençlerin
+            eğitimini dikkatle planlıyor ve yakından takip ediyoruz. Ayrıca
+            gençlerimizin yabancı dil, lisansüstü eğitim ve kişisel gelişim gibi
+            konulardaki çalışmalarını da önemsiyor ve destekliyoruz. Siz de
+            üniversiteden yeni mezun olduysanız, geleceğe dair hayalleriniz
+            varsa, bu sektörde saygın bir yeriniz olsun istiyorsanız ve
+            profesyonellerin tedrisatından geçmeye hazırsanız, sizi bu seçkin
+            aileye katılmaya davet ediyoruz.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="kariyer-pdf mt-4 p-3 rounded rounded-3 shadow">
+      <div class="mb-3">
+        <form action="" method="post" enctype="multipart/form-data">
+          <label for="formFile" class="form-label"
+            >Özgeçmiş formu göndermek için tıklayınız.(PDF formatında olması
+            gerekmektedir.)</label
+          >
+          {{form.file(class='form-control',type='file',id='formFile',
+          accept='application/pdf',enctype='multipart/form-data')}}
+          <div>
+            {{form.submit(class='btn btn-primary w-100 mt-2',type='submit')}}
+          </div>
+          <!-- <input class="form-control" type="file" id="formFile" /> -->
+        </form>
+      </div>
+      <ul class="list-group list-group-numbered">
+        <li class="list-group-item">
+          Öz geçmiş formu göndererek başvuruda bulunan adaylardan uygun
+          görülenler, görüşme için ofisimize davet edilecektir.
+        </li>
+        <li class="list-group-item">
+          Öz geçmiş formu göndererek başvuruda bulunan veya görüşme için
+          ofisimize davet edilen tüm adaylara, sonuçla ilgili olarak mümkün olan
+          en kısa sürede dönüş sağlanacaktır.
+        </li>
+        <li class="list-group-item">
+          Ekip lideri ve kıdemli personel alımları, esas olarak doğrudan teklif
+          ve transfer yoluyla yapılmaktadır. Bu konudaki olası iş ilanlarımız
+          için lütfen duyurular bölümünü takip ediniz.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{%endblock%}

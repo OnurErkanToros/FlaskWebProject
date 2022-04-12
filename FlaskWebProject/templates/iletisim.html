@@ -1,0 +1,291 @@
+{%extends "base.html"%} {%block content%}
+<header>
+  <div class="container text-center">
+    <img
+      class="img-fluid header-yukseklik"
+      src="{{url_for('static',filename='img/sayfaBasliklari/headerIletisim.png')}}"
+      alt=""
+    />
+  </div>
+</header>
+<section class="ftco-section">
+  <div class="container">
+    <div class="text-end">
+      <img
+        class="w-50"
+        src="{{url_for('static',filename='img/iletisim.png')}}"
+        alt=""
+      />
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="wrapper">
+          <div class="col-md-12">
+            <div class="contact-wrap w-100 p-md-5 p-4">
+              <h3 class="mb-4">
+                <i class="fa fa-phone"></i>
+                Bizi Arayın
+              </h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-phone"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">0 312 447 87 88</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-mobile"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">0 532 471 83 92</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-mobile"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">0 530 115 35 11</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mt-2">
+            <div class="contact-wrap w-100 p-md-5 p-4">
+              <h3 class="mb-4">
+                <i class="fa fa-pencil"></i>
+                Bize Yazın
+              </h3>
+              <!-- Buraya uyarı mesajı gelecek -->
+              {% with messages = get_flashed_messages() %} {% if messages %} {%
+              for message in messages %}
+              <div class="alert alert-success" role="alert">{{message}}</div>
+              {% endfor %} {% endif %} {% endwith %}
+              <form method="post" class="contactForm" action="">
+                {{form.hidden_tag()}}
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label" for="name">İSİM SOYİSİM</label>
+                      {{form.isim(class='form-control',type='text')}}
+                      <!-- <input
+                          type="text"
+                          class="form-control"
+                          name="name"
+                          id="name"
+                          placeholder="İsim Soyisim"
+                        /> -->
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label" for="email">MAİL ADRES</label>
+                      {{form.mailAdres(class='form-control',type='email')}}
+                      <!-- <input
+                          type="email"
+                          class="form-control"
+                          name="email"
+                          id="email"
+                          placeholder="Mail"
+                        /> -->
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="label" for="subject">KONU</label>
+                      {{form.konu(class='form-control',type='text')}}
+                      <!-- <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          id="subject"
+                          placeholder="Konu"
+                        /> -->
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="label" for="#">MESAJ</label>
+                      {{form.mesaj(class='form-control',type='text',rows='4')}}
+                      <!-- <textarea
+                          name="message"
+                          class="form-control"
+                          id="message"
+                          cols="30"
+                          rows="4"
+                          placeholder="Mesaj"
+                        ></textarea> -->
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      {{form.gonderButton(class='btn btn-primary
+                      mt-2',type='submit')}}
+                      <!-- <input
+                          type="submit"
+                          value="GÖNDER"
+                          class="btn btn-primary"
+                        /> -->
+                      <div class="submitting"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-12 mt-2">
+            <div class="contact-wrap w-100 p-md-5 p-4">
+              <h3 class="mb-4">
+                <i class="fa fa-envelope"></i>
+                Bize İleti Gönderin
+              </h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-paper-plane"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">bilgi@atmacakaraarslan.com.tr</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-paper-plane"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">atmacakaraarslan@outlook.com</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 mt-2">
+            <div class="contact-wrap w-100 p-md-5 p-4">
+              <h3 class="mb-4"><i class="fa fa-plus"></i> Bizi Takip Edin</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-instagram"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">@atmacakaraarslan</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-twitter"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">@atmacakaraarslan</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-youtube"></span>
+                    </div>
+                    <div class="text">
+                      <p>
+                        <a href="#">@atmacakaraarslan</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 adres-map mt-2">
+            <div class="row">
+              <div class="col-md-7 pe-md-0">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <h3 class="mb-4">
+                    <i class="fa fa-map"></i> Bizi Ziyaret Edin
+                  </h3>
+                  <div
+                    class="dbox w-100 d-flex justify-content-center text-center"
+                  >
+                    <div class="text col-7 py-5">
+                      <div
+                        class="icon d-flex align-items-center justify-content-center"
+                      >
+                        <span class="fa fa-map-pin"></span>
+                      </div>
+                      <p style="font-size: larger">
+                        Büyükesat Mahallesi Mahatma Gandi Caddesi No: 78/6 06680
+                        Çankaya/ANKARA
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col w-100 d-flex ps-md-0 align-items-stretch">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12244.63479950097!2d32.877926!3d39.893079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x31d56f1c0aae0a8d!2sAtmaca%20Karaarslan%20YMM!5e0!3m2!1str!2str!4v1645140650312!5m2!1str!2str"
+                  style="
+                    border: 0;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 300px;
+                  "
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

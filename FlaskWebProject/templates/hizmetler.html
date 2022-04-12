@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block content %}
+  <header>
+    <div class="container text-center">
+      <img
+        class="img-fluid header-yukseklik"
+        src="{{url_for('static',filename='img/sayfaBasliklari/headerHizmetlerimiz.png')}}"
+        alt=""
+      />
+    </div>
+  </header>
+  <section class="hizmetler">
+    <div class="container">
+      <div class="p-3 bg-light rounded rounded-2 shadow">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>Danışmanlık Hizmetleri</h3>
+
+                  <a href="{{url_for('hizmetDetay',hizmetId=1)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>Özel Amaçlı Hizmetler</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=7)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>İş ve Sosyal Güvenlik Hizmetleri</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=6)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>İnceleme ve Dava Hizmetleri</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=5)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>Teşvik Hizmetleri</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=8)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>Eğitim ve Konferans Hizmetleri</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=3)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>İade Hizmetleri</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=4)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="d-flex justify-content-center py-3">
+              <div class="hizmet-main shadow">
+                <div class="before-overlay"></div>
+                <div class="overlay">
+                  <h3>Denetim Hizmetleri</h3>
+                  <a href="{{url_for('hizmetDetay',hizmetId=2)}}">Sayfaya Git</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock%}

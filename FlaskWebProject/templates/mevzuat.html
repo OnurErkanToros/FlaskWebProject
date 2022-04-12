@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block content %}
+  <header>
+    <div class="container text-center">
+      <img
+        class="img-fluid header-yukseklik"
+        src="{{url_for('static',filename='img/sayfaBasliklari/headerMevzuat.png')}}"
+        alt=""
+      />
+    </div>
+  </header>
+  <section class="mevzuat">
+    <div class="container">
+      <div class="bg-light p-5 rounded-2 shadow">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a
+                href="#"
+                class="list-group-item list-group-item-action active"
+                aria-current="true"
+              >
+                Makaleler
+              </a>
+              <a href="#" class="list-group-item list-group-item-action"
+                >Sirkülerler
+              </a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="mevzuat-bilglendirme">
+              <img
+                class="w-100 img-thumbnail shadow-sm"
+                src="https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+                alt=""
+              />
+              <p class="text-center mt-2">
+                Biz sizler için ulusal hukuk sistemini ve yapılan her türlü
+                değişikliği takip ediyoruz. Ancak yine de mevzuata göz atmak
+                isterseniz;
+              </p>
+            </div>
+            <div class="mevzuat-linkler">
+              <div class="row">
+                <div class="col-md-4 d-flex justify-content-center">
+                  <div class="kurumsal-kutu">
+                    <a href="#"
+                      ><img
+                        src="{{url_for('static',filename='img/mevzuat/cumhurmevzuat.png')}}"
+                        alt=""
+                    /></a>
+                    <a href="#">Tüm Mevzuat</a>
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                  <div class="kurumsal-kutu">
+                    <a href="#"
+                      ><img
+                        src="{{url_for('static',filename='img/mevzuat/gib-geliridaresi-yenilogo.png')}}"
+                        alt=""
+                    /></a>
+                    <a href="#">Vergi Mevzuat</a>
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                  <div class="kurumsal-kutu">
+                    <a href="#"
+                      ><img
+                        src="{{url_for('static',filename='img/mevzuat/sgk-logo.png')}}"
+                        alt=""
+                    /></a>
+                    <a href="#">Sosyal Güvenlik Mevzuatı</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock%}

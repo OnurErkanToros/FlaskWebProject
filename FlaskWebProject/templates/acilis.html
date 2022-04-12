@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/bootstrap.min.css')}}"
+    />
+    <link rel="shortcut icon" href="{{url_for('static',filename='img/favicon.ico')}}" type="image/x-icon">
+    <title>Tanıtım</title>
+  </head>
+  <body>
+    <div class="ilkSayfa text-center">
+      <div class="progressBar">
+        <div class="bar-color"></div>
+    </div>
+    <h6>Herhangi bir yere tıklayın</h6>
+      <main class="acilisSayfasi">
+        <div class="janti-logo">
+          <img src="{{url_for('static',filename='img/acilis/acilis.png')}}" alt="" />
+          <div class="logo">
+            <img src="{{url_for('static',filename='img/acilis/logo.png')}}" alt="" />
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="videoEkrani sayfayiGizle">
+      <video id="tanitimVideosu">
+        <source src="{{url_for('static',filename='img/acilis/animasyon.mp4')}}" type="video/mp4" />
+      </video>
+    </div>
+    <script src="{{url_for('static',filename='js/acilisSayfasi.js')}}"></script>
+    
+  </body>
+</html>

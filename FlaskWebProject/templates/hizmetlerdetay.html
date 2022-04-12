@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+  <div class="container">
+    <div class="shadow">
+      <div class="baslik text-center pt-4 mt-2">
+        <img class="w-75" src="{{url_for('static',filename=hizmet.resimYolu)}}" alt="" />
+      </div>
+      <div class="mt-2 d-flex justify-content-center">
+        <div
+          class="col-md-8 p-2 bg-secondary shadow text-light rounded rounded-2"
+        >
+          <p class="display-6 text-center fw-bold">
+            {{hizmet.slogan}}
+          </p>
+          <hr />
+          <p class="fs-5 text-center">
+            {{hizmet.aciklama}}
+          </p>
+        </div>
+      </div>
+      <div class="ozellikler mx-5 my-2 pb-5">
+        <h1 class="text-center">Hizmetler</h1>
+        <div class="row">
+          {%for hizmetcik in hizmet.altHizmetler%}
+          <div class="col-md-6">
+            <div class="hizmetcik shadow">
+              <p class="fs-5">{{hizmetcik.metin}}</p>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

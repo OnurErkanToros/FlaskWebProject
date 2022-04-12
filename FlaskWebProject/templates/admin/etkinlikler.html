@@ -1,0 +1,101 @@
+{% extends "admin/baseAdmin.html" %} {% block admin %}
+
+<div class="aktivite-ekle">
+  <div class="container bg-light shadow p-5">
+    {%if baslik%}
+    <h1>Etkinlik düzenle</h1>
+    {%else%}
+    <h1>Etkinlik ekle</h1>
+    {%endif%}
+    <form action="{{url_for('adminEtkinlik')}}" method="post">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Etkinlik Başlığı</label
+        >
+        {{form.title(class='form-control',type='text',id='exampleFormControlInput1')}}
+        <!-- <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+        /> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label"
+          >Etkinlik Altbaşlığı</label
+        >
+        {{form.subtitle(class='form-control',type='text',id='exampleFormControlInput2')}}
+        <!-- <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput2"
+        /> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Etkinlik Metni</label
+        >
+        {{form.text(class='form-control',id='exampleFormControlTextarea1',rows="5")}}
+        <!-- <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="5"
+        ></textarea> -->
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          {{form.announcementActivityDate(type='date',class='form-control
+          text-center')}}
+          <!-- <input
+            type="date"
+            name=""
+            id="datecontrol"
+            class="form-control text-center"
+          /> -->
+        </div>
+        <div class="col-sm-9 text-end">
+          {{form.addButton(class='btn btn-success', type='submit')}}
+          <!-- <button type="submit" class="btn btn-success">Ekle</button> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{%if etkinlikler%}
+<div class="aktiviteler">
+  <div class="container bg-light shadow p-5 mt-5">
+    <h1>Eklenmiş etkinlikler</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Başlık</th>
+          <th scope="col">Altbaşlık</th>
+          <th scope="col">Etkinlik Metni</th>
+          <th scope="col">Etkinlik Tarihi</th>
+          <th scope="col">Ekleme tarihi</th>
+          <th scope="col" class="text-center">Aksiyonlar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for etkinlik in etkinlikler%}
+        <tr>
+          <td>{{etkinlik.title}}</td>
+          <td>{{etkinlik.subtitle}}</td>
+          <td><p class="text-break">{{etkinlik.text}}</p></td>
+          <td>{{etkinlik.activityDate.strftime('%d.%m.%Y')}}</td>
+          <td>{{etkinlik.activityAddDate.strftime('%d.%m.%Y')}}</td>
+          <td class="text-center">
+            <div>
+              <a
+                class="btn btn-danger mb-2"
+                href="{{url_for('etkinlikSil',etkinlik_id=etkinlik.id)}}"
+                >Sil</a
+              >
+            </div>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+{%endif%} {% endblock %}

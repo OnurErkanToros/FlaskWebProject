@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block content %}
+
+<div>
+  <header>
+    <div class="container text-center">
+      <img
+        class="img-fluid header-yukseklik"
+        src="{{url_for('static',filename='img/sayfaBasliklari/headerEtkinlikler.png')}}"
+        alt=""
+      />
+    </div>
+  </header>
+  <section>
+    {% if etkinlikler%} {%for etkinlik in etkinlikler%}
+    <div class="padding-div p-4">
+      <div class="container h-50 shadow rounded">
+        <div class="row">
+          <div class="col-lg-3 kart-sol p-3 bg-secondary rounded rounded-3">
+            <div class="h-100 d-flex align-items-center">
+              
+              <div class="text-center w-100 text-light ">
+                <hr>
+                <h6>Etkinlik Tarihi</h6>
+                
+                <p class="fs-4 ">
+                  {{etkinlik.activityDate.strftime('%d')}}/{{months[etkinlik.activityDate.strftime('%m')]}}/{{etkinlik.activityDate.strftime('%Y')}}
+                </p>
+                <hr>
+              </div>
+              
+            </div>
+            <img class="w-100 rounded float-start" src="img/3.jpg" alt="" />
+          </div>
+          <div class="col-lg-9">
+            <div class="kart-sag d-flex align-items-center">
+              <div class="ort-div">
+                <div class="baslik-aciklama">
+                  <h1 class="text-uppercase">{{etkinlik.title}}</h1>
+                  <h5 class="text-uppercase">{{etkinlik.subtitle}}</h5>
+                  <p class="pb-4 text-break">{{etkinlik.text}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-end p-1">
+              <p>
+                {{etkinlik.activityAddDate.strftime('%d-%m-%Y')}} tarihinde
+                eklendi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endfor%} {%else%}
+    <div class="text-center"><h4>Henüz etkinlik yok :(</h4></div>
+    {%endif%}
+  </section>
+</div>
+{%endblock%}

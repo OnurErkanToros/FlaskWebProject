@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Paneli</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+  </head>
+  <body>
+    <div class="float-start">
+      <div
+        class="d-flex flex-column flex-shrink-0 p-3 bg-light vh-100"
+        style="width: 280px"
+      >
+        <span class="fs-5 text-center">Atmaca&Karaarslan Admin Panel</span>
+
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li>
+            <a href="{{url_for('adminEtkinlik')}}" class="nav-link link-dark text-center">
+              Etkinlikler
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('adminDuyuru')}}" class="nav-link link-dark text-center">Duyurular</a>
+          </li>
+          <li>
+            <a href="{{url_for('logout')}}" class="nav-link link-dark text-center"> Çıkış Yap </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% block admin%} {% endblock %}
+  </body>
+</html>

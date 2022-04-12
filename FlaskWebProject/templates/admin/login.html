@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+  </head>
+  <body>
+    <div class="vh-100 d-flex justify-content-center align-items-center">
+      <div
+        class="login shadow p-3 rounded rounded-3"
+      >
+      <div class="text-center">
+        <img class="w-100" src="{{url_for('static',filename='img/brand.gif')}}" alt="">
+        <h3>Admin Paneli</h3>
+      </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <form action="" method="post">
+            {{form.hidden_tag()}}
+            <div class="mb-3 row my-auto">
+              <label for="staticEmail" class="col-sm-3 col-form-label"
+                >Mail</label
+              >
+              <div class="col-sm-9">
+                {{form.mail(class='form-control',type='email')}}
+                <!-- <input type="text" class="form-control" id="staticEmail" /> -->
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputPassword" class="col-sm-3 col-form-label"
+                >Parola</label
+              >
+              <div class="col-sm-9">
+                {{form.parola(class='form-control',type='password')}}
+                <!-- <input type="password" class="form-control" id="inputPassword" /> -->
+              </div>
+              <div class="d-flex justify-content-center align-items-center mt-2">
+                {{form.recaptcha}}
+              </div>
+              <!-- recaptcha gelecek -->
+              <div class="d-flex align-items-end justify-content-center">
+                {{form.girisButton(class='mt-2 w-50 btn btn-dark',
+                type='submit')}}
+                <!-- <button type="submit" class="mt-2 w-50 btn btn-dark">
+                  Giris Yap
+                </button> -->
+              </div>
+              
+                <ul class="text-center" style="list-style: none;">
+                {% for error in form.recaptcha.errors %}
+                <li>recaptcha boş geçilemez</li>
+                {%endfor%}
+                </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
